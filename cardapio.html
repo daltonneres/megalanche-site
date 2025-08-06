@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cardápio | Big Burger| O Melhor Hambúrguer da Cidade</title>
+    <link rel="icon" type="image/png" href="favicon.png" title="Big Burger">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header class="menu-cardapio">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#lanches">Lanches</a></li>
+                <li><a href="#combos">Combos</a></li>
+                <li><a href="#bebidas">Bebidas</a></li>
+                <li><a href="#promocoes">Promoções</a></li>
+                <li><button id="btn-ver-carrinho">Ver Carrinho (<span id="contador-itens">0</span>)</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seções do cardápio -->
+        <section id="lanches">
+            <h2>Nossos Lanches</h2>
+            <ul class="lista-lanches">
+                <li class="lanche-item">
+                    <h3>Big Burger Clássico</h3>
+                    <p>Carne 150g, queijo cheddar, alface, tomate, maionese caseira</p>
+                    <span class="preco">R$ 25,00</span>
+                    <button class="btn-adicionar" data-produto="Big Burger Clássico"
+                        data-preco="25.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Cheddar Bacon</h3>
+                    <p>Carne 150g, queijo cheddar, bacon crocante, cebola caramelizada</p>
+                    <span class="preco">R$ 29,00</span>
+                    <button class="btn-adicionar" data-produto="Cheddar Bacon" data-preco="29.00">Adicionar</button>
+                </li>
+            </ul>
+        </section>
+
+        <section id="bebidas">
+            <h2>Nossas Bebidas</h2>
+            <ul class="lista-lanches">
+                <li class="lanche-item">
+                    <h3>Refrigerante 350ml</h3>
+                    <p>Cola geladinha, do jeito que a gente gosta</p>
+                    <span class="preco">R$ 7,00</span>
+                    <button class="btn-adicionar" data-produto="Refrigerante 350ml" data-preco="7.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Suco Natural Laranja</h3>
+                    <p>Suco fresquinho, sem conservantes</p>
+                    <span class="preco">R$ 9,00</span>
+                    <button class="btn-adicionar" data-produto="Suco Natural Laranja"
+                        data-preco="9.00">Adicionar</button>
+                </li>
+                <!-- Adicione mais bebidas aqui -->
+            </ul>
+        </section>
+
+        <section id="combos">
+            <h2>Combos Especiais</h2>
+            <ul class="lista-lanches">
+                <li class="lanche-item">
+                    <h3>Combo Big Burger Clássico</h3>
+                    <p>Big Burger Clássico + Fritas + Refrigerante 350ml</p>
+                    <span class="preco">R$ 35,00</span>
+                    <button class="btn-adicionar" data-produto="Combo Big Burger Clássico"
+                        data-preco="35.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Combo Cheddar Bacon</h3>
+                    <p>Cheddar Bacon + Fritas + Suco Natural</p>
+                    <span class="preco">R$ 39,00</span>
+                    <button class="btn-adicionar" data-produto="Combo Cheddar Bacon"
+                        data-preco="39.00">Adicionar</button>
+                </li>
+                <!-- Adicione mais combos aqui -->
+            </ul>
+        </section>
+
+        <section id="promocoes">
+            <h2>Promoções do Dia</h2>
+            <ul class="lista-lanches">
+                <li class="lanche-item">
+                    <h3>Combo Clássico com 10% OFF</h3>
+                    <p>Big Burger Clássico + Fritas + Refrigerante 350ml</p>
+                    <span class="preco">R$ 34,20</span>
+                    <button class="btn-adicionar" data-produto="Combo Clássico com 10% OFF"
+                        data-preco="34.20">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Cheddar Bacon + Suco Natural</h3>
+                    <p>Combo especial</p>
+                    <span class="preco">R$ 35,00</span>
+                    <button class="btn-adicionar" data-produto="Cheddar Bacon + Suco Natural"
+                        data-preco="35.00">Adicionar</button>
+                </li>
+                <!-- Adicione mais promoções aqui -->
+            </ul>
+        </section>
+
+        <script>
+            // Pega a data atual e coloca na seção promoções
+            const dataAtualEl = document.getElementById('data-atual');
+            const hoje = new Date();
+            const opcoes = { day: '2-digit', month: '2-digit', year: 'numeric' };
+            dataAtualEl.textContent = hoje.toLocaleDateString('pt-BR', opcoes);
+        </script>
+    </main>
+
+    <div id="modal-carrinho" class="modal-carrinho hidden">
+        <div class="modal-content">
+            <h2>Seu Carrinho</h2>
+            <ul id="lista-carrinho"></ul>
+            <p id="total-carrinho">Total: R$ 0,00</p>
+
+            <div class="opcoes-pedido">
+                <label for="tipo-entrega">Tipo de Pedido:</label><br />
+                <select id="tipo-entrega" name="tipo-entrega">
+                    <option value="Entrega">Entrega</option>
+                    <option value="Retirada">Retirada</option>
+                </select>
+
+                <br /><br />
+
+                <label for="forma-pagamento">Forma de Pagamento:</label><br />
+                <select id="forma-pagamento" name="forma-pagamento">
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="Pix">Pix</option>
+                    <option value="Cartão de Crédito">Cartão de Crédito</option>
+                    <option value="Cartão de Débito">Cartão de Débito</option>
+                </select>
+
+                <br /><br />
+
+                <label for="troco">Precisa de troco? Se sim, informe o valor:</label><br />
+                <input type="text" id="troco" name="troco" placeholder="Ex: 50,00" />
+            </div>
+
+            <button id="btn-enviar-whatsapp">Enviar Pedido via WhatsApp</button>
+            <button id="btn-limpar-carrinho">Limpar Carrinho</button>
+            <button id="btn-fechar-carrinho">Fechar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <footer>
+        &copy; 2025 Big Burger - Todos os direitos reservados.
+    </footer>
+
+</body>
+
+</html>
