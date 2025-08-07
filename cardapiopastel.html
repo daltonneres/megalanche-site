@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cardápio | Big Burger| O Melhor Pastel da Cidade</title>
+    <link rel="icon" type="image/png" href="favicon.png" title="Big Burger">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header class="menu-cardapio">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#lanches">Pasteis</a></li>
+                <li><a href="#combos">Combos</a></li>
+                <li><a href="#bebidas">Bebidas</a></li>
+                <li><a href="#promocoes">Promoções</a></li>
+                <li><button id="btn-ver-carrinho">Ver Carrinho (<span id="contador-itens">0</span>)</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seções do cardápio -->
+        <section id="pasteis">
+            <h2>Monte seu Pastel</h2>
+            <ul class="lista-lanches">
+                <li class="lanche-item">
+                    <h3>Pastel Personalizado</h3>
+                    <p>Monte seu pastel com até:</p>
+                    <ul>
+                        <li>Pequeno - 2 sabores</li>
+                        <li>Médio - 3 sabores</li>
+                        <li>Grande - 4 sabores</li>
+                    </ul>
+
+                    <label for="tamanho-pastel">Tamanho:</label>
+                    <select class="tamanho-pastel">
+                        <option value="Pequeno" data-preco="10.00">Pequeno - R$ 10,00</option>
+                        <option value="Médio" data-preco="13.00">Médio - R$ 13,00</option>
+                        <option value="Grande" data-preco="16.00">Grande - R$ 16,00</option>
+                    </select>
+
+                    <br><br>
+                    <label for="sabores">Escolha os sabores:</label>
+                    <input type="text" placeholder="Ex: Calabresa, Queijo..." class="sabores-pastel">
+
+                    <br><br>
+                    <button class="btn-adicionar-pastel">Adicionar Pastel</button>
+                </li>
+            </ul>
+        </section>
+
+        <section id="bebidas">
+            <h2>Bebidas</h2>
+            <ul class="lista-lanches">
+                <li class="lanche-item">
+                    <h3>Refrigerante Lata</h3>
+                    <p>Coca, Guaraná, Pepsi</p>
+                    <span class="preco">R$ 5,00</span>
+                    <button class="btn-adicionar" data-produto="Refrigerante Lata" data-preco="5.00">Adicionar</button>
+                </li>
+
+                <li class="lanche-item">
+                    <h3>Suco Natural</h3>
+                    <p>Laranja, Maracujá</p>
+                    <span class="preco">R$ 6,00</span>
+                    <button class="btn-adicionar" data-produto="Suco Natural" data-preco="6.00">Adicionar</button>
+                </li>
+                <!-- Adicione mais bebidas aqui -->
+            </ul>
+        </section>
+
+        <section id="combos">
+            <h2>Combos Especiais</h2>
+            <ul class="lista-lanches">
+                <li class="lanche-item">
+                    <h3>Combo 1: Pastel Médio + Refri Lata</h3>
+                    <p>Monte seu pastel com 3 sabores + 1 lata (Coca, Guaraná, Pepsi)</p>
+                    <span class="preco">R$ 18,00</span>
+                    <button class="btn-adicionar" data-produto="Combo 1" data-preco="18.00">Adicionar</button>
+                </li>
+
+                <li class="lanche-item">
+                    <h3>Combo 2: Pastel Grande + Suco Natural</h3>
+                    <p>Pastel de 4 sabores + Suco de Laranja ou Maracujá</p>
+                    <span class="preco">R$ 21,00</span>
+                    <button class="btn-adicionar" data-produto="Combo 2" data-preco="21.00">Adicionar</button>
+                </li>
+                <!-- Adicione mais combos aqui -->
+            </ul>
+        </section>
+
+        <section id="promocoes">
+            <h2>Promoções do Dia</h2>
+            <ul class="lista-lanches">
+                <li class="lanche-item">
+                    <h3>Segunda Maluca</h3>
+                    <p>Pastel Grande por R$ 12,00</p>
+                    <span class="preco">R$ 12,00</span>
+                    <button class="btn-adicionar" data-produto="Pastel Grande Promoção"
+                        data-preco="12.00">Adicionar</button>
+                </li>
+
+                <li class="lanche-item">
+                    <h3>Combo Casal</h3>
+                    <p>2 pasteis médios + 2 latas por R$ 30,00</p>
+                    <span class="preco">R$ 30,00</span>
+                    <button class="btn-adicionar" data-produto="Combo Casal" data-preco="30.00">Adicionar</button>
+                </li>
+                <!-- Adicione mais promoções aqui -->
+            </ul>
+        </section>
+
+        <script>
+            // Pega a data atual e coloca na seção promoções
+            const dataAtualEl = document.getElementById('data-atual');
+            const hoje = new Date();
+            const opcoes = { day: '2-digit', month: '2-digit', year: 'numeric' };
+            dataAtualEl.textContent = hoje.toLocaleDateString('pt-BR', opcoes);
+        </script>
+    </main>
+
+    <div id="modal-carrinho" class="modal-carrinho hidden">
+        <div class="modal-content">
+            <h2>Seu Carrinho</h2>
+            <ul id="lista-carrinho"></ul>
+            <p id="total-carrinho">Total: R$ 0,00</p>
+
+            <div class="opcoes-pedido">
+                <label for="tipo-entrega">Tipo de Pedido:</label><br />
+                <select id="tipo-entrega" name="tipo-entrega">
+                    <option value="Entrega">Entrega</option>
+                    <option value="Retirada">Retirada</option>
+                </select>
+
+                <br /><br />
+
+                <label for="forma-pagamento">Forma de Pagamento:</label><br />
+                <select id="forma-pagamento" name="forma-pagamento">
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="Pix">Pix</option>
+                    <option value="Cartão de Crédito">Cartão de Crédito</option>
+                    <option value="Cartão de Débito">Cartão de Débito</option>
+                </select>
+
+                <br /><br />
+
+                <label for="troco">Precisa de troco? Se sim, informe o valor:</label><br />
+                <input type="text" id="troco" name="troco" placeholder="Ex: 50,00" />
+            </div>
+
+            <button id="btn-enviar-whatsapp">Enviar Pedido via WhatsApp</button>
+            <button id="btn-limpar-carrinho">Limpar Carrinho</button>
+            <button id="btn-fechar-carrinho">Fechar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <footer>
+        &copy; 2025 Big Burger - Todos os direitos reservados.
+    </footer>
+
+</body>
+
+</html>

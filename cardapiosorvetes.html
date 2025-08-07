@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cardápio | Big Burger | Sorvetes por Peso</title>
+    <link rel="icon" type="image/png" href="favicon.png" title="Big Burger Sorvetes">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header class="menu-cardapio">
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#sabores">Sabores</a></li>
+                <li><a href="#combos">Combos</a></li>
+                <li><a href="#bebidas">Bebidas</a></li>
+                <li><a href="#promocoes">Promoções</a></li>
+                <li><button id="btn-ver-carrinho">Ver Carrinho (<span id="contador-itens">0</span>)</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sabores">
+            <h2>Sorvetes Artesanais por Peso</h2>
+            <p class="info-preco-peso">R$ 3,00 a cada 100 gramas</p>
+            <ul class="lista-lanches">
+                <li class="lanche-item">
+                    <h3>Morango</h3>
+                    <p>Feito com morangos frescos e 100% natural</p>
+                    <span class="preco">R$ 3,00 / 100g</span>
+                    <button class="btn-adicionar" data-produto="Sorvete de Morango (100g)" data-preco="3.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Chocolate Belga</h3>
+                    <p>Sabor intenso com chocolate premium</p>
+                    <span class="preco">R$ 3,00 / 100g</span>
+                    <button class="btn-adicionar" data-produto="Sorvete de Chocolate Belga (100g)" data-preco="3.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Baunilha com Cookies</h3>
+                    <p>Cremoso com pedaços de cookies crocantes</p>
+                    <span class="preco">R$ 3,00 / 100g</span>
+                    <button class="btn-adicionar" data-produto="Sorvete de Baunilha com Cookies (100g)" data-preco="3.00">Adicionar</button>
+                </li>
+            </ul>
+        </section>
+
+        <section id="bebidas">
+            <h2>Bebidas</h2>
+            <ul class="lista-lanches">
+                <li class="lanche-item">
+                    <h3>Água Mineral</h3>
+                    <p>500ml sem gás</p>
+                    <span class="preco">R$ 4,00</span>
+                    <button class="btn-adicionar" data-produto="Água Mineral" data-preco="4.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Refrigerante Lata</h3>
+                    <p>350ml - Cola, Laranja ou Guaraná</p>
+                    <span class="preco">R$ 7,00</span>
+                    <button class="btn-adicionar" data-produto="Refrigerante Lata" data-preco="7.00">Adicionar</button>
+                </li>
+            </ul>
+        </section>
+
+        <section id="combos">
+            <h2>Combos Gelados</h2>
+            <ul class="lista-lanches">
+                <li class="lanche-item">
+                    <h3>Combo 300g + Refrigerante</h3>
+                    <p>3 sabores à sua escolha (100g cada) + 1 refrigerante</p>
+                    <span class="preco">R$ 16,00</span>
+                    <button class="btn-adicionar" data-produto="Combo 300g + Refrigerante" data-preco="16.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Combo Família 600g + 2 Bebidas</h3>
+                    <p>Ideal para dividir — 6 sabores (100g cada) + 2 bebidas</p>
+                    <span class="preco">R$ 30,00</span>
+                    <button class="btn-adicionar" data-produto="Combo Família 600g + 2 Bebidas" data-preco="30.00">Adicionar</button>
+                </li>
+            </ul>
+        </section>
+
+        <section id="promocoes">
+            <h2>Promoções do Dia</h2>
+            <ul class="lista-lanches">
+                <li class="lanche-item">
+                    <h3>200g por R$ 5,00</h3>
+                    <p>Escolha até 2 sabores — promoção válida hoje!</p>
+                    <span class="preco">R$ 5,00</span>
+                    <button class="btn-adicionar" data-produto="Promoção 200g" data-preco="5.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>400g + Refrigerante</h3>
+                    <p>Perfeito para compartilhar</p>
+                    <span class="preco">R$ 17,00</span>
+                    <button class="btn-adicionar" data-produto="400g + Refrigerante" data-preco="17.00">Adicionar</button>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <div id="modal-carrinho" class="modal-carrinho hidden">
+        <div class="modal-content">
+            <h2>Seu Carrinho</h2>
+            <ul id="lista-carrinho"></ul>
+            <p id="total-carrinho">Total: R$ 0,00</p>
+
+            <div class="opcoes-pedido">
+                <label for="tipo-entrega">Tipo de Pedido:</label><br />
+                <select id="tipo-entrega" name="tipo-entrega">
+                    <option value="Entrega">Entrega</option>
+                    <option value="Retirada">Retirada</option>
+                </select>
+
+                <br /><br />
+
+                <label for="forma-pagamento">Forma de Pagamento:</label><br />
+                <select id="forma-pagamento" name="forma-pagamento">
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="Pix">Pix</option>
+                    <option value="Cartão de Crédito">Cartão de Crédito</option>
+                    <option value="Cartão de Débito">Cartão de Débito</option>
+                </select>
+
+                <br /><br />
+
+                <label for="troco">Precisa de troco? Se sim, informe o valor:</label><br />
+                <input type="text" id="troco" name="troco" placeholder="Ex: 50,00" />
+            </div>
+
+            <button id="btn-enviar-whatsapp">Enviar Pedido via WhatsApp</button>
+            <button id="btn-limpar-carrinho">Limpar Carrinho</button>
+            <button id="btn-fechar-carrinho">Fechar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <footer>
+        &copy; 2025 Big Burger Sorvetes - Sorvete por peso feito com amor.
+    </footer>
+
+</body>
+
+</html>
