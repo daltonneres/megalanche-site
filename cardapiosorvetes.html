@@ -97,6 +97,12 @@
                 Promoções válidas apenas durante nosso horário de funcionamento — <span id="data-atual"></span> — das
                 18:00 às 23:00
             </p>
+
+            <p class="info-loja">
+                📍 Rua Exemplo, 123 - Centro, Cidade/UF
+                🕒 Horário de funcionamento: Todos os dias das 18:00 às 23:00
+            </p>
+
             <ul class="lista-lanches">
                 <li class="lanche-item">
                     <h3>200g por R$ 5,00</h3>
@@ -114,14 +120,14 @@
             </ul>
         </section>
 
-                <script>
+        <script>
             // Pega a data atual e coloca na seção promoções
             const dataAtualEl = document.getElementById('data-atual');
             const hoje = new Date();
             const opcoes = { day: '2-digit', month: '2-digit', year: 'numeric' };
             dataAtualEl.textContent = hoje.toLocaleDateString('pt-BR', opcoes);
         </script>
-        
+
     </main>
 
     <div id="modal-carrinho" class="modal-carrinho hidden">
