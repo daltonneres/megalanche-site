@@ -33,19 +33,22 @@
                     <h3>Morango</h3>
                     <p>Feito com morangos frescos e 100% natural</p>
                     <span class="preco">R$ 3,00 / 100g</span>
-                    <button class="btn-adicionar" data-produto="Sorvete de Morango (100g)" data-preco="3.00">Adicionar</button>
+                    <button class="btn-adicionar" data-produto="Sorvete de Morango (100g)"
+                        data-preco="3.00">Adicionar</button>
                 </li>
                 <li class="lanche-item">
                     <h3>Chocolate Belga</h3>
                     <p>Sabor intenso com chocolate premium</p>
                     <span class="preco">R$ 3,00 / 100g</span>
-                    <button class="btn-adicionar" data-produto="Sorvete de Chocolate Belga (100g)" data-preco="3.00">Adicionar</button>
+                    <button class="btn-adicionar" data-produto="Sorvete de Chocolate Belga (100g)"
+                        data-preco="3.00">Adicionar</button>
                 </li>
                 <li class="lanche-item">
                     <h3>Baunilha com Cookies</h3>
                     <p>Cremoso com pedaços de cookies crocantes</p>
                     <span class="preco">R$ 3,00 / 100g</span>
-                    <button class="btn-adicionar" data-produto="Sorvete de Baunilha com Cookies (100g)" data-preco="3.00">Adicionar</button>
+                    <button class="btn-adicionar" data-produto="Sorvete de Baunilha com Cookies (100g)"
+                        data-preco="3.00">Adicionar</button>
                 </li>
             </ul>
         </section>
@@ -75,19 +78,25 @@
                     <h3>Combo 300g + Refrigerante</h3>
                     <p>3 sabores à sua escolha (100g cada) + 1 refrigerante</p>
                     <span class="preco">R$ 16,00</span>
-                    <button class="btn-adicionar" data-produto="Combo 300g + Refrigerante" data-preco="16.00">Adicionar</button>
+                    <button class="btn-adicionar" data-produto="Combo 300g + Refrigerante"
+                        data-preco="16.00">Adicionar</button>
                 </li>
                 <li class="lanche-item">
                     <h3>Combo Família 600g + 2 Bebidas</h3>
                     <p>Ideal para dividir — 6 sabores (100g cada) + 2 bebidas</p>
                     <span class="preco">R$ 30,00</span>
-                    <button class="btn-adicionar" data-produto="Combo Família 600g + 2 Bebidas" data-preco="30.00">Adicionar</button>
+                    <button class="btn-adicionar" data-produto="Combo Família 600g + 2 Bebidas"
+                        data-preco="30.00">Adicionar</button>
                 </li>
             </ul>
         </section>
 
         <section id="promocoes">
             <h2>Promoções do Dia</h2>
+            <p class="data-promo">
+                Promoções válidas apenas durante nosso horário de funcionamento — <span id="data-atual"></span> — das
+                18:00 às 23:00
+            </p>
             <ul class="lista-lanches">
                 <li class="lanche-item">
                     <h3>200g por R$ 5,00</h3>
@@ -99,10 +108,20 @@
                     <h3>400g + Refrigerante</h3>
                     <p>Perfeito para compartilhar</p>
                     <span class="preco">R$ 17,00</span>
-                    <button class="btn-adicionar" data-produto="400g + Refrigerante" data-preco="17.00">Adicionar</button>
+                    <button class="btn-adicionar" data-produto="400g + Refrigerante"
+                        data-preco="17.00">Adicionar</button>
                 </li>
             </ul>
         </section>
+
+                <script>
+            // Pega a data atual e coloca na seção promoções
+            const dataAtualEl = document.getElementById('data-atual');
+            const hoje = new Date();
+            const opcoes = { day: '2-digit', month: '2-digit', year: 'numeric' };
+            dataAtualEl.textContent = hoje.toLocaleDateString('pt-BR', opcoes);
+        </script>
+        
     </main>
 
     <div id="modal-carrinho" class="modal-carrinho hidden">

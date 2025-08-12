@@ -118,3 +118,70 @@ btnLimparCarrinho.addEventListener('click', () => {
   atualizarListaCarrinho();
   atualizarContador();
 });
+
+// === Fluxo Pastel Personalizado ===
+const tamanhoPastelSelect = document.getElementById('tamanho-pastel');
+const btnEscolherSabores = document.getElementById('btn-escolher-sabores');
+const modalSabores = document.getElementById('modal-sabores');
+const listaSaboresCheckbox = document.querySelectorAll('#lista-sabores input[type="checkbox"]');
+const contadorSaboresEl = document.getElementById('contador-sabores');
+const btnAdicionarCarrinhoPastel = document.getElementById('btn-adicionar-carrinho-pastel');
+const btnFecharSabores = document.getElementById('btn-fechar-sabores');
+
+let tamanhoSelecionado = '';
+let precoSelecionado = 0;
+let maxSabores = 0;
+
+// Abrir modal de sabores
+btnEscolherSabores.addEventListener('click', () => {
+    if (!tamanhoPastelSelect.value) {
+        alert('Selecione o tamanho do pastel primeiro.');
+        return;
+    }
+
+    tamanhoSelecionado = tamanhoPastelSelect.value;
+    precoSelecionado = parseFloat(tamanhoPastelSelect.selectedOptions[0].dataset.preco);
+
+    // Define limite por tamanho
+    if (tamanhoSelecionado === 'Pequeno') maxSabores = 2;
+    if (tamanhoSelecionado === 'Médio') maxSabores = 3;
+    if (tamanhoSelecionado === 'Grande') maxSabores = 4;
+
+    // Limpa seleções anteriores
+    listaSaboresCheckbox.forEach(cb => cb.checked = false);
+    contadorSaboresEl.textContent = `0 selecionados (máx. ${maxSabores})`;
+
+    modalSabores.classList.remove('hidden');
+});
+
+// Contador e limite de sabores
+listaSaboresCheckbox.forEach(cb => {
+    cb.addEventListener('change', () => {
+        let selecionados = document.querySelectorAll('#lista-sabores input:checked').length;
+        if (selecionados > maxSabores) {
+            cb.checked = false;
+            alert(`Máximo de ${maxSabores} sabores para tamanho ${tamanhoSelecionado}`);
+        }
+        contadorSaboresEl.textContent = `${document.querySelectorAll('#lista-sabores input:checked').length} selecionados (máx. ${maxSabores})`;
+    });
+});
+
+// Adicionar pastel ao carrinho
+btnAdicionarCarrinhoPastel.addEventListener('click', () => {
+    let saboresEscolhidos = [...document.querySelectorAll('#lista-sabores input:checked')].map(cb => cb.value);
+
+    if (saboresEscolhidos.length !== maxSabores) {
+        alert(`Escolha exatamente ${maxSabores} sabores!`);
+        return;
+    }
+
+    let nomeFinal = `Pastel ${tamanhoSelecionado} (${saboresEscolhidos.join(', ')})`;
+    adicionarAoCarrinho(nomeFinal, precoSelecionado);
+
+    modalSabores.classList.add('hidden');
+});
+
+// Fechar modal de sabores
+btnFecharSabores.addEventListener('click', () => {
+    modalSabores.classList.add('hidden');
+});

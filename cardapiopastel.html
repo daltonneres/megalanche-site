@@ -25,7 +25,6 @@
     </header>
 
     <main>
-        <!-- Seções do cardápio -->
         <section id="pasteis">
             <h2>Monte seu Pastel</h2>
             <ul class="lista-lanches">
@@ -39,21 +38,42 @@
                     </ul>
 
                     <label for="tamanho-pastel">Tamanho:</label>
-                    <select class="tamanho-pastel">
+                    <select id="tamanho-pastel">
+                        <option value="" disabled selected>Selecione o tamanho</option>
                         <option value="Pequeno" data-preco="10.00">Pequeno - R$ 10,00</option>
                         <option value="Médio" data-preco="13.00">Médio - R$ 13,00</option>
                         <option value="Grande" data-preco="16.00">Grande - R$ 16,00</option>
                     </select>
 
                     <br><br>
-                    <label for="sabores">Escolha os sabores:</label>
-                    <input type="text" placeholder="Ex: Calabresa, Queijo..." class="sabores-pastel">
 
-                    <br><br>
-                    <button class="btn-adicionar-pastel">Adicionar Pastel</button>
+                    <label for="btn-escolher-sabores">Sabores:</label>
+                    <button id="btn-escolher-sabores">Escolha seus sabores</button>
+
                 </li>
             </ul>
         </section>
+
+        <!-- Modal de seleção de sabores -->
+        <div id="modal-sabores" class="modal-carrinho hidden">
+            <div class="modal-content">
+                <h2>Escolha seus Sabores</h2>
+                <div id="lista-sabores">
+                    <label><input type="checkbox" value="Carne"> Carne</label><br>
+                    <label><input type="checkbox" value="Queijo"> Queijo</label><br>
+                    <label><input type="checkbox" value="Calabresa"> Calabresa</label><br>
+                    <label><input type="checkbox" value="Frango"> Frango</label><br>
+                    <label><input type="checkbox" value="Pizza"> Pizza</label><br>
+                    <label><input type="checkbox" value="Palmito"> Palmito</label><br>
+                    <label><input type="checkbox" value="Bauru"> Bauru</label><br>
+                    <label><input type="checkbox" value="Chocolate"> Chocolate</label><br>
+                    <label><input type="checkbox" value="Romeu e Julieta"> Romeu e Julieta</label><br>
+                </div>
+                <p id="contador-sabores">0 selecionados</p>
+                <button id="btn-adicionar-carrinho-pastel">Adicionar ao Carrinho</button>
+                <button id="btn-fechar-sabores">Cancelar</button>
+            </div>
+        </div>
 
         <section id="bebidas">
             <h2>Bebidas</h2>
@@ -97,6 +117,9 @@
 
         <section id="promocoes">
             <h2>Promoções do Dia</h2>
+            <p class="data-promo">
+                Promoções válidas apenas durante nosso horário de funcionamento — <span id="data-atual"></span> — das 18:00 às 23:00
+            </p>
             <ul class="lista-lanches">
                 <li class="lanche-item">
                     <h3>Segunda Maluca</h3>

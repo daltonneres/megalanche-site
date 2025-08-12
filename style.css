@@ -445,3 +445,94 @@ section#sorvetes .btn-ver-cardapio:hover {
   font-size: 1rem;
   box-sizing: border-box;
 }
+
+/* Modal de seleção de sabores */
+#modal-sabores .modal-content {
+    max-width: 400px;
+    text-align: left;
+}
+
+#lista-sabores {
+    margin: 15px 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#lista-sabores label {
+    display: block;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+#contador-sabores {
+    font-weight: bold;
+    color: #ffcc00;
+    margin-top: 10px;
+}
+
+#btn-adicionar-carrinho-pastel, #btn-fechar-sabores {
+    background-color: #ffcc00;
+    border: none;
+    color: #000;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 10px 5px 0 5px;
+}
+
+#btn-fechar-sabores {
+    background-color: #ff4444;
+    color: #fff;
+}
+
+#btn-adicionar-carrinho-pastel:hover {
+    background-color: #e6b800;
+}
+
+#btn-fechar-sabores:hover {
+    background-color: #cc0000;
+}
+
+/* Ajuste da seção de montagem de pastel */
+#pasteis .lanche-item label,
+#pasteis .lanche-item select,
+#pasteis .lanche-item button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#pasteis .lanche-item button {
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: 700;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#pasteis .lanche-item button:hover {
+  background-color: #e6b800;
+}
+
+/* Select de tamanho no mesmo estilo do botão */
+#pasteis #tamanho-pastel {
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: 700;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  appearance: none; /* remove a setinha padrão */
+  text-align: center;
+}
+
+#pasteis #tamanho-pastel:hover {
+  background-color: #e6b800;
+}
