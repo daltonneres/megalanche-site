@@ -18,6 +18,14 @@ Projeto simples de site para a hamburgueria Big Burger, com cardápio digital di
 - CSS3  
 - JavaScript puro
 
-## Contato
+---
 
-Para sugestões ou dúvidas, entre em contato via WhatsApp: +55 11 99999-9999
+## 👨‍💻 Desenvolvedor
+
+Este projeto foi desenvolvido por **Dalton Neres**, **Full Stack Developer**, com foco em **criação de sites institucionais, aplicações web modernas e soluções acessíveis**.  
+
+- 🔗 **GitHub:** [Dalton Neres](https://github.com/daltonneres)  
+- 🌍 **Portfólio:** [Dalton Neres - Portfólio](https://daltonneres.github.io/potfolio_neres/)  
+- 💼 **LinkedIn:** [Dalton José Neres](https://www.linkedin.com/in/dalton-josé-neres)  
+
+---
