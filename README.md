@@ -1,6 +1,6 @@
-# Big Burger - Site Oficial
+# Mega Lanche - Site Oficial
 
-Projeto simples de site para a lanchonete Big Burger, com cardápio digital dividido em lanches, combos, bebidas e promoções.
+Projeto simples de site para a lanchonete Mega Lanche, com cardápio digital dividido em lanches, combos, bebidas e promoções.
 
 - Interface escura, visual raiz e direto ao ponto.  
 - Carrinho com integração para envio de pedido via WhatsApp.  
