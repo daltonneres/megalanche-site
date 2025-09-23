@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cardápio | Big Burger | Sorvetes por Peso</title>
+    <title>Cardápio | Mega Lanche | Sorvetes por Peso</title>
     <link rel="icon" type="image/png" href="favicon.png" title="Big Burger Sorvetes">
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -129,47 +129,53 @@
 
     </main>
 
-    <div id="modal-carrinho" class="modal-carrinho hidden">
-        <div class="modal-content">
-            <h2>Seu Carrinho</h2>
-            <ul id="lista-carrinho"></ul>
-            <p id="total-carrinho">Total: R$ 0,00</p>
+  <!-- Carrinho -->
+  <div id="modal-carrinho" class="modal-carrinho hidden">
+    <div class="modal-content">
+      <h2>Seu Carrinho</h2>
+      <ul id="lista-carrinho"></ul>
+      <p id="total-carrinho">Total: R$ 0,00</p>
 
-            <div class="opcoes-pedido">
-                <label for="tipo-entrega">Tipo de Pedido:</label><br />
-                <select id="tipo-entrega" name="tipo-entrega">
-                    <option value="Entrega">Entrega</option>
-                    <option value="Retirada">Retirada</option>
-                </select>
+      <div class="opcoes-pedido">
+        <label for="tipo-entrega">Tipo de Pedido:</label><br />
+        <select id="tipo-entrega" name="tipo-entrega">
+          <option value="Entrega">Entrega (+R$ 8,00)</option>
+          <option value="Retirada">Retirada</option>
+        </select>
 
-                <br /><br />
+        <br /><br />
 
-                <label for="forma-pagamento">Forma de Pagamento:</label><br />
-                <select id="forma-pagamento" name="forma-pagamento">
-                    <option value="Dinheiro">Dinheiro</option>
-                    <option value="Pix">Pix</option>
-                    <option value="Cartão de Crédito">Cartão de Crédito</option>
-                    <option value="Cartão de Débito">Cartão de Débito</option>
-                </select>
-
-                <br /><br />
-
-                <label for="troco">Precisa de troco? Se sim, informe o valor:</label><br />
-                <input type="text" id="troco" name="troco" placeholder="Ex: 50,00" />
-            </div>
-
-            <button id="btn-enviar-whatsapp">Enviar Pedido via WhatsApp</button>
-            <button id="btn-limpar-carrinho">Limpar Carrinho</button>
-            <button id="btn-fechar-carrinho">Fechar</button>
+        <div id="campo-endereco" style="display: none;">
+          <label for="endereco">Endereço de Entrega:</label><br />
+          <input type="text" id="endereco" name="endereco" placeholder="Rua, número, bairro, cidade" />
         </div>
+
+        <br />
+
+        <label for="forma-pagamento">Forma de Pagamento:</label><br />
+        <select id="forma-pagamento" name="forma-pagamento">
+          <option value="Dinheiro">Dinheiro</option>
+          <option value="Pix">Pix</option>
+          <option value="Cartão de Crédito">Cartão de Crédito</option>
+          <option value="Cartão de Débito">Cartão de Débito</option>
+        </select>
+
+        <br /><br />
+
+        <label for="troco">Precisa de troco? Se sim, informe o valor:</label><br />
+        <input type="text" id="troco" name="troco" placeholder="Ex: 50,00" />
+      </div>
+
+      <button id="btn-enviar-whatsapp">Enviar Pedido via WhatsApp</button>
+      <button id="btn-limpar-carrinho">Limpar Carrinho</button>
+      <button id="btn-fechar-carrinho">Fechar</button>
     </div>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 
-    <footer>
-        &copy; 2025 Big Burger Sorvetes - Sorvete por peso feito com amor.
-    </footer>
-
+  <footer>
+    &copy; 2025 Mega Lanche Sorvetes - Sorvete por peso feito com amor - Todos os direitos reservados.
+  </footer>
 </body>
-
 </html>

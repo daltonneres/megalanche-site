@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cardápio | Big Burger| O Melhor Hambúrguer da Cidade</title>
+    <title>Cardápio | Mega Lanche | Os Melhores Lanches da Cidade</title>
     <link rel="icon" type="image/png" href="favicon.png" title="Big Burger">
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -17,6 +17,7 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="#lanches">Lanches</a></li>
                 <li><a href="#combos">Combos</a></li>
+                <li><a href="#doces">Doces</a></li>
                 <li><a href="#bebidas">Bebidas</a></li>
                 <li><a href="#promocoes">Promoções</a></li>
                 <li><button id="btn-ver-carrinho">Ver Carrinho (<span id="contador-itens">0</span>)</button></li>
@@ -30,17 +31,64 @@
             <h2>Nossos Lanches</h2>
             <ul class="lista-lanches">
                 <li class="lanche-item">
-                    <h3>Big Burger Clássico</h3>
-                    <p>Carne 150g, queijo cheddar, alface, tomate, maionese caseira</p>
-                    <span class="preco">R$ 25,00</span>
-                    <button class="btn-adicionar" data-produto="Big Burger Clássico"
-                        data-preco="25.00">Adicionar</button>
+                    <h3>Bauru Tradicional</h3>
+                    <p>Pão francês, presunto, queijo, tomate e orégano</p>
+                    <span class="preco">R$ 18,00</span>
+                    <button class="btn-adicionar" data-produto="Bauru Tradicional" data-preco="18.00">Adicionar</button>
                 </li>
                 <li class="lanche-item">
-                    <h3>Cheddar Bacon</h3>
-                    <p>Carne 150g, queijo cheddar, bacon crocante, cebola caramelizada</p>
-                    <span class="preco">R$ 29,00</span>
-                    <button class="btn-adicionar" data-produto="Cheddar Bacon" data-preco="29.00">Adicionar</button>
+                    <h3>Pão de Prato com Frango</h3>
+                    <p>Pão de prato recheado com frango desfiado e maionese caseira</p>
+                    <span class="preco">R$ 22,00</span>
+                    <button class="btn-adicionar" data-produto="Pão de Prato com Frango"
+                        data-preco="22.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Baguete Caprese</h3>
+                    <p>Baguete com mussarela, tomate, manjericão e azeite</p>
+                    <span class="preco">R$ 20,00</span>
+                    <button class="btn-adicionar" data-produto="Baguete Caprese" data-preco="20.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Baguete Frango com Catupiry</h3>
+                    <p>Baguete recheada com frango desfiado e catupiry</p>
+                    <span class="preco">R$ 23,00</span>
+                    <button class="btn-adicionar" data-produto="Baguete Frango com Catupiry"
+                        data-preco="23.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Pão de Batata Recheado</h3>
+                    <p>Pão de batata quentinho, recheado com queijo e presunto</p>
+                    <span class="preco">R$ 8,00</span>
+                    <button class="btn-adicionar" data-produto="Pão de Batata Recheado"
+                        data-preco="8.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Pão de Queijo (6 unidades)</h3>
+                    <p>Pão de queijo quentinho, fofinho e saboroso</p>
+                    <span class="preco">R$ 12,00</span>
+                    <button class="btn-adicionar" data-produto="Pão de Queijo (6 unidades)"
+                        data-preco="12.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Kibe (6 unidades)</h3>
+                    <p>Kibe frito crocante, recheado com carne temperada</p>
+                    <span class="preco">R$ 14,00</span>
+                    <button class="btn-adicionar" data-produto="Kibe (6 unidades)" data-preco="14.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Porção de Batata Frita</h3>
+                    <p>Batatas crocantes, servidas quentinhas</p>
+                    <span class="preco">R$ 12,00</span>
+                    <button class="btn-adicionar" data-produto="Porção de Batata Frita"
+                        data-preco="12.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Coxinha (6 unidades)</h3>
+                    <p>Coxinhas crocantes, recheadas com frango temperado</p>
+                    <span class="preco">R$ 15,00</span>
+                    <button class="btn-adicionar" data-produto="Coxinha (6 unidades)"
+                        data-preco="15.00">Adicionar</button>
                 </li>
             </ul>
         </section>
@@ -61,7 +109,12 @@
                     <button class="btn-adicionar" data-produto="Suco Natural Laranja"
                         data-preco="9.00">Adicionar</button>
                 </li>
-                <!-- Adicione mais bebidas aqui -->
+                <li class="lanche-item">
+                    <h3>Chá Gelado</h3>
+                    <p>Refrescante e natural, sem açúcar</p>
+                    <span class="preco">R$ 6,00</span>
+                    <button class="btn-adicionar" data-produto="Chá Gelado" data-preco="6.00">Adicionar</button>
+                </li>
             </ul>
         </section>
 
@@ -69,20 +122,65 @@
             <h2>Combos Especiais</h2>
             <ul class="lista-lanches">
                 <li class="lanche-item">
-                    <h3>Combo Big Burger Clássico</h3>
-                    <p>Big Burger Clássico + Fritas + Refrigerante 350ml</p>
-                    <span class="preco">R$ 35,00</span>
-                    <button class="btn-adicionar" data-produto="Combo Big Burger Clássico"
-                        data-preco="35.00">Adicionar</button>
+                    <h3>Combo Bauru + Porção de Batata</h3>
+                    <p>Bauru Tradicional + Porção de Batata Frita + Refrigerante 350ml</p>
+                    <span class="preco">R$ 30,00</span>
+                    <button class="btn-adicionar" data-produto="Combo Bauru + Porção de Batata"
+                        data-preco="30.00">Adicionar</button>
                 </li>
                 <li class="lanche-item">
-                    <h3>Combo Cheddar Bacon</h3>
-                    <p>Cheddar Bacon + Fritas + Suco Natural</p>
-                    <span class="preco">R$ 39,00</span>
-                    <button class="btn-adicionar" data-produto="Combo Cheddar Bacon"
-                        data-preco="39.00">Adicionar</button>
+                    <h3>Combo Baguete Frango</h3>
+                    <p>Baguete Frango com Catupiry + Suco Natural Laranja</p>
+                    <span class="preco">R$ 28,00</span>
+                    <button class="btn-adicionar" data-produto="Combo Baguete Frango"
+                        data-preco="28.00">Adicionar</button>
                 </li>
-                <!-- Adicione mais combos aqui -->
+            </ul>
+        </section>
+
+        <section id="doces">
+            <h2>Nossos Doces</h2>
+            <ul class="lista-lanches">
+                <li class="lanche-item">
+                    <h3>Doce Baguete de Nutella</h3>
+                    <p>Baguete recheada com Nutella e morangos</p>
+                    <span class="preco">R$ 15,00</span>
+                    <button class="btn-adicionar" data-produto="Doce Baguete de Nutella"
+                        data-preco="15.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Copo da Felicidade</h3>
+                    <p>Copo de sobremesa com chocolate, morango, leite condensado e granulado</p>
+                    <span class="preco">R$ 12,00</span>
+                    <button class="btn-adicionar" data-produto="Copo da Felicidade"
+                        data-preco="12.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Brigadeiro Gourmet (unidade)</h3>
+                    <p>Brigadeiro cremoso, cobertura de chocolate granulado</p>
+                    <span class="preco">R$ 5,00</span>
+                    <button class="btn-adicionar" data-produto="Brigadeiro Gourmet (unidade)"
+                        data-preco="5.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Churros Recheado</h3>
+                    <p>Churros crocante com doce de leite ou chocolate</p>
+                    <span class="preco">R$ 8,00</span>
+                    <button class="btn-adicionar" data-produto="Churros Recheado" data-preco="8.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Brownie com Sorvete</h3>
+                    <p>Brownie de chocolate servido com uma bola de sorvete</p>
+                    <span class="preco">R$ 12,00</span>
+                    <button class="btn-adicionar" data-produto="Brownie com Sorvete"
+                        data-preco="12.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Mini Cheesecake</h3>
+                    <p>Mini cheesecake de frutas vermelhas</p>
+                    <span class="preco">R$ 10,00</span>
+                    <button class="btn-adicionar" data-produto="Mini Cheesecake" data-preco="10.00">Adicionar</button>
+                </li>
             </ul>
         </section>
 
@@ -99,32 +197,67 @@
 
             <ul class="lista-lanches">
                 <li class="lanche-item">
-                    <h3>Combo Clássico com 10% OFF</h3>
-                    <p>Big Burger Clássico + Fritas + Refrigerante 350ml</p>
-                    <span class="preco">R$ 34,20</span>
-                    <button class="btn-adicionar" data-produto="Combo Clássico com 10% OFF"
-                        data-preco="34.20">Adicionar</button>
+                    <h3>Combo Bauru + Porção de Batata</h3>
+                    <p>Bauru Tradicional + Porção de Batata Frita + Refrigerante 350ml</p>
+                    <span class="preco">R$ 28,00</span>
+                    <button class="btn-adicionar" data-produto="Combo Bauru + Porção de Batata"
+                        data-preco="28.00">Adicionar</button>
                 </li>
                 <li class="lanche-item">
-                    <h3>Cheddar Bacon + Suco Natural</h3>
-                    <p>Combo especial</p>
-                    <span class="preco">R$ 35,00</span>
-                    <button class="btn-adicionar" data-produto="Cheddar Bacon + Suco Natural"
-                        data-preco="35.00">Adicionar</button>
+                    <h3>Baguete Frango + Suco</h3>
+                    <p>Baguete Frango com Catupiry + Suco Natural Laranja</p>
+                    <span class="preco">R$ 25,00</span>
+                    <button class="btn-adicionar" data-produto="Baguete Frango + Suco"
+                        data-preco="25.00">Adicionar</button>
                 </li>
-                <!-- Adicione mais promoções aqui -->
+                <li class="lanche-item">
+                    <h3>Doce Baguete de Nutella</h3>
+                    <p>Baguete recheada com Nutella e morangos</p>
+                    <span class="preco">R$ 13,00</span>
+                    <button class="btn-adicionar" data-produto="Doce Baguete de Nutella"
+                        data-preco="13.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Pão de Batata Recheado</h3>
+                    <p>Pão de batata quentinho, recheado com queijo e presunto</p>
+                    <span class="preco">R$ 7,50</span>
+                    <button class="btn-adicionar" data-produto="Pão de Batata Recheado"
+                        data-preco="7.50">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Pão de Queijo (6 unidades)</h3>
+                    <p>Pão de queijo quentinho, fofinho e saboroso</p>
+                    <span class="preco">R$ 10,00</span>
+                    <button class="btn-adicionar" data-produto="Pão de Queijo (6 unidades)"
+                        data-preco="10.00">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Kibe (6 unidades)</h3>
+                    <p>Kibe frito crocante, recheado com carne temperada</p>
+                    <span class="preco">R$ 12,50</span>
+                    <button class="btn-adicionar" data-produto="Kibe (6 unidades)" data-preco="12.50">Adicionar</button>
+                </li>
+                <li class="lanche-item">
+                    <h3>Copo da Felicidade</h3>
+                    <p>Copo de sobremesa com chocolate, morango, leite condensado e granulado</p>
+                    <span class="preco">R$ 10,00</span>
+                    <button class="btn-adicionar" data-produto="Copo da Felicidade"
+                        data-preco="10.00">Adicionar</button>
+                </li>
             </ul>
         </section>
-
-        <script>
-            // Pega a data atual e coloca na seção promoções
-            const dataAtualEl = document.getElementById('data-atual');
-            const hoje = new Date();
-            const opcoes = { day: '2-digit', month: '2-digit', year: 'numeric' };
-            dataAtualEl.textContent = hoje.toLocaleDateString('pt-BR', opcoes);
-        </script>
     </main>
 
+    <script>
+        // Pega a data atual e coloca na seção promoções
+        const dataAtualEl = document.getElementById('data-atual');
+        const hoje = new Date();
+        const opcoes = { day: '2-digit', month: '2-digit', year: 'numeric' };
+        dataAtualEl.textContent = hoje.toLocaleDateString('pt-BR', opcoes);
+    </script>
+    </main>
+
+    <!-- Carrinho -->
     <div id="modal-carrinho" class="modal-carrinho hidden">
         <div class="modal-content">
             <h2>Seu Carrinho</h2>
@@ -134,11 +267,18 @@
             <div class="opcoes-pedido">
                 <label for="tipo-entrega">Tipo de Pedido:</label><br />
                 <select id="tipo-entrega" name="tipo-entrega">
-                    <option value="Entrega">Entrega</option>
+                    <option value="Entrega">Entrega (+R$ 8,00)</option>
                     <option value="Retirada">Retirada</option>
                 </select>
 
                 <br /><br />
+
+                <div id="campo-endereco" style="display: none;">
+                    <label for="endereco">Endereço de Entrega:</label><br />
+                    <input type="text" id="endereco" name="endereco" placeholder="Rua, número, bairro, cidade" />
+                </div>
+
+                <br />
 
                 <label for="forma-pagamento">Forma de Pagamento:</label><br />
                 <select id="forma-pagamento" name="forma-pagamento">
@@ -163,9 +303,8 @@
     <script src="script.js"></script>
 
     <footer>
-        &copy; 2025 Big Burger - Todos os direitos reservados.
+        &copy; 2025 Mega Lanche - Lanches feitos para o tamanho da sua fome - Todos os direitos reservados.
     </footer>
-
 </body>
 
 </html>
